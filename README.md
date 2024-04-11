@@ -61,6 +61,7 @@ For more information, see
 
 Please consider citing our work if you use any of the ideas presented the paper or code from this repo:
 
+```bash
 @InProceedings{Wang_2023_ICCV,
     author    = {Wang, Shan and Nguyen, Chuong and Liu, Jiawei and Zhang, Kaihao and Luo, Wenhan and Zhang, Yanhao and Muthu, Sundaram and Maken, Fahira Afzal and Li, Hongdong},
     title     = {Homography Guided Temporal Fusion for Road Line and Marking Segmentation},
@@ -69,3 +70,4 @@ Please consider citing our work if you use any of the ideas presented the paper 
     year      = {2023},
     pages     = {1075-1085}
 }
+```
