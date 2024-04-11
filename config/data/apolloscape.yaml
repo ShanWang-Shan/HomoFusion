@@ -1,0 +1,30 @@
+dataset: 'apolloscape'           # do not modify :)
+num_classes: 36                # merge the noise and ignore labels
+
+# used to get_split
+version: null
+dataset_dir: '/data/dataset/apolloscape/'
+labels_dir: '/data/dataset/apolloscape/'
+
+## used to generate dataset
+#cameras: [[0, 1]]
+
+# required for train/eval
+# Takes the form [[i, j, ...], [p, q, ...]]
+# where [i, j, ...] are indices of individual classes (car, truck, ...),
+# and will be grouped into one semantic class (vehicle).
+label_indices:  null
+
+# input parameters (not used in label generation) #'strong'
+augment: 'none'
+image: # original: 2710*3384 crop->1084*3384
+  h: 272 #544 #1088 #
+  w: 848 #1696 #3392 #
+  top_crop: 0.60 # ratio of h
+  sequence_cnt: 2
+  norm_start_h: 0.07 # 0.67 in all image, 0.07 in cropped image
+  norm_end_h: 0.85
+  norm_ignore_w: 0.0
+  init_pitch: 0.15
+  init_roll: 0.00
+  camera_height: 2.1

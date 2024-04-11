@@ -1,0 +1,14 @@
+ColorImage_road02 Record006 5
+ColorImage_road02 Record006 6
+ColorImage_road02 Record020 5
+ColorImage_road02 Record020 6
+ColorImage_road03 Record004 5
+ColorImage_road03 Record004 6
+ColorImage_road03 Record022 5
+ColorImage_road03 Record022 6
+ColorImage_road03 Record033 5
+ColorImage_road03 Record033 6
+ColorImage_road04 Record005 5
+ColorImage_road04 Record005 6
+ColorImage_road04 Record014 5
+ColorImage_road04 Record014 6

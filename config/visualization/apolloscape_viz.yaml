@@ -1,0 +1,2 @@
+_target_: homo_transformer.visualizations.apolloscape_viz.ApolloscapeViz
+label_indices: ${data.label_indices}

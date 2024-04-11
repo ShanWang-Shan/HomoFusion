@@ -1,0 +1,43 @@
+_target_: homo_transformer.model.homot.HomoTransformer
+
+dim_last: 64
+
+outputs:
+  mask: [0, 1]
+
+encoder:
+  _target_: homo_transformer.model.homo_guide_encoder.Encoder
+
+  dim: 128
+  scale: 1.0
+  middle: [2, 2]
+  norm_start_h: ${data.image.norm_start_h}
+  norm_end_h: ${data.image.norm_end_h}
+  norm_ignore_w: ${data.image.norm_ignore_w}
+  norm_init_pitch: ${data.image.init_pitch}
+  norm_init_roll: ${data.image.init_roll}
+  camera_height: ${data.image.camera_height}
+
+  backbone:
+    _target_: homo_transformer.model.backbones.efficientnet.EfficientNetExtractor
+
+    model_name: efficientnet-b4
+    layer_names: ['reduction_2', 'reduction_4']
+    image_height: ${data.image.h}
+    image_width: ${data.image.w}
+
+  sequence_view:
+    heads: 4
+    skip: True
+    sequence_cnt: ${data.image.sequence_cnt}
+
+    image_height: ${data.image.h}
+    image_width: ${data.image.w}
+
+decoder:
+  _target_: homo_transformer.model.homo_decoder.Decoder
+
+  dim: ${model.encoder.dim}
+  blocks: [128, 64]
+  residual: True
+  factor: 2

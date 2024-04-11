@@ -1,0 +1,15 @@
+bce_weight: 0.0
+bce:
+  _target_: homo_transformer.losses.BinarySegmentationLoss
+
+  label_indices: ${data.label_indices}
+  gamma: 0.0
+  alpha: 0.25
+
+focal_weight: 1.0
+focal:
+  _target_: homo_transformer.losses.BinarySegmentationLoss
+
+  label_indices: ${data.label_indices}
+  gamma: 2.0
+  alpha: 0.25

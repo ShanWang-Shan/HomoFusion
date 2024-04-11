@@ -1,0 +1,4 @@
+iou:
+  _target_: homo_transformer.metrics.IoUMetric
+  classes: ${data.num_classes} #only evaluate 18 in 38 for apolloscape
+  label_indices: ${data.label_indices}
