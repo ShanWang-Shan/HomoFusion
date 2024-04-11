@@ -1,0 +1,2 @@
+_target_: homo_transformer.visualizations.water_hazard_viz.WaterHazardViz
+label_indices: ${data.label_indices}

@@ -5,6 +5,7 @@ from fvcore.nn import sigmoid_focal_loss
 
 from .data.apolloscape.trainId2color import Loss_weight
 Loss_weight = torch.tensor(Loss_weight)
+Waymo_Loss_weight = torch.tensor([2,100,100])
 
 logger = logging.getLogger(__name__)
 
@@ -61,7 +62,9 @@ class BinarySegmentationLoss(SigmoidFocalLoss):
             mask = batch['visibility'] >= self.min_visibility
             loss = loss[mask[:, None]]
 
-        if loss.shape[2] > 1: # for apolloscape
+        if loss.shape[1] == 3: # for waymo # need move to config ###
+            loss = loss * Waymo_Loss_weight[:,None,None].to(loss)
+        if loss.shape[1] > 3: # for apolloscape # need move to config ###
             loss = loss * Loss_weight[:,None,None].to(loss)
 
         return loss.mean()

@@ -27,7 +27,7 @@ class BaseIoUMetric(Metric):
 
 
     def update(self, pred, label):
-        if self.classes == 1:
+        if self.classes == 1: # waterhazard
             pred = pred.detach().sigmoid().reshape(-1)
             label = label.detach().bool().reshape(-1)
 
@@ -37,7 +37,21 @@ class BaseIoUMetric(Metric):
             self.tp += (pred & label).sum(0)
             self.fp += (pred & ~label).sum(0)
             self.fn += (~pred & label).sum(0)
-        else:
+        elif self.classes == 3: # waymo:
+            pred = pred.detach().sigmoid()
+            label = label.detach().bool()
+            max_pred,_ = torch.max(pred, dim=1)
+            pred = (pred == max_pred[:,None])
+            pred = pred.permute(1, 0, 2, 3) # c b h w
+            label = label.permute(1, 0, 2, 3) # c b h w
+
+            pred = pred.flatten(1)  # c p
+            label = label.flatten(1)  # c p
+
+            self.tp += (pred & label).sum(1)
+            self.fp += (pred & ~label).sum(1)
+            self.fn += (~pred & label).sum(1)
+        else: # apolloscape
             pred = pred.detach().sigmoid()
             label = label.detach().bool()
             max_pred,_ = torch.max(pred, dim=1)

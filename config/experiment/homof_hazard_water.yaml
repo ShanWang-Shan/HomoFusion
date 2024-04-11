@@ -1,0 +1,15 @@
+# @package _global_
+defaults:
+  - override /model: deform_homot #homot
+  - override /data: water_hazard_water
+
+trainer:
+  max_steps: 175001
+
+loss:
+  bce_weight: 0.1
+  focal_weight: 1.0
+
+model:
+  outputs:
+    mask: [0, 1]

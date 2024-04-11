@@ -1,0 +1,30 @@
+dataset: 'water_hazard'           # do not modify :)
+num_classes: 1                         # do not modify :)
+
+# used to get_split
+version: null
+dataset_dir: '/data/dataset/water_hazard/'
+labels_dir: null
+
+## used to generate dataset
+#cameras: [[0, 1]]
+
+# required for train/eval
+# Takes the form [[i, j, ...], [p, q, ...]]
+# where [i, j, ...] are indices of individual classes (car, truck, ...),
+# and will be grouped into one semantic class (vehicle).
+label_indices:  null
+
+# input parameters (not used in label generation) #'strong'
+augment: 'none'
+image: # original: 720*1280 crop->360*1280
+  h: 240 #160 #320
+  w: 320 # 640 #1280
+  top_crop: 0.5 # ratio of h
+  sequence_cnt: 8 
+  norm_start_h: 0.08 # 0.58 in all image, 0.08 in cropped image
+  norm_end_h: 0.90
+  norm_ignore_w: 0.165
+  init_pitch: -0.00036
+  init_roll: 0.00
+  camera_height: 1.77
