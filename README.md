@@ -34,21 +34,33 @@ pip install -e .
 ```
 
 ## <div align="center">**Data**</div>
-
+Appolloscape Dataset:
 <br>
-
-Download the original datasets from [apolloscape](https://apolloscape.auto/), we use their [self localization](https://apolloscape.auto/self_localization.html) dataset, , as it provides essential camera extrinsics. You can find the dataset split in the 'apolloscape_split' folder. Please copy these split files into your dataset directory. 
+Download the original datasets from [apolloscape](https://apolloscape.auto/), we use their [self localization](https://apolloscape.auto/self_localization.html) dataset, as it provides essential camera extrinsics. You can find the dataset split in the 'apolloscape_split' folder. Please copy these split files into your dataset directory. 
 <br/>
 
+Puddle-1000 Dataset:
+<br>
+Download the datasets from [Puddle-1000](https://github.com/Cow911/SingleImageWaterHazardDetectionWithRAU.git), dataslip file can also be find in their repository under 'dataset' folder.
+<br/>
 
 ## Training
 
-To train a model,
+To train a model on Appolloscapt,
 ```bash
 python3 scripts/train.py \
-  +experiment=homof_apolloscape
+  +experiment=homof_apolloscape \
   data.dataset_dir=path_to_apolloscape \
   data.labels_dir=path_to_apolloscape_label
+```
+
+To train a model on Puddle-1000,
+```bash
+python3 scripts/train.py \
+  +experiment=homof_hazard_water \
+  data.dataset=water_hazard \
+  data.dataset_dir=path_to_Puddle-1000 \
+  data.labels_dir=path_to_Puddle-1000_label
 ```
 
 For more information, see
