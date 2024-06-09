@@ -21,13 +21,13 @@ encoder:
   backbone:
     _target_: homo_transformer.model.backbones.efficientnet.EfficientNetExtractor
 
-    model_name: efficientnet-b4
+    model_name: efficientnet-b6
     layer_names: ['reduction_2', 'reduction_4']
     image_height: ${data.image.h}
     image_width: ${data.image.w}
 
   sequence_view:
-    heads: 4
+    heads: 1
     skip: True
     sequence_cnt: ${data.image.sequence_cnt}
 
