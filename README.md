@@ -37,7 +37,7 @@ pip install -e .
 
 Appolloscape Dataset:
 <br>
-Download the original datasets from [apolloscape](https://apolloscape.auto/), we use their [self localization](https://apolloscape.auto/self_localization.html) dataset, as it provides essential camera extrinsics. You can find the dataset split in the 'apolloscape_split' folder. Please copy these split files into your dataset directory. 
+Download the original datasets from [apolloscape](https://apolloscape.auto/), we get pose information from their [self localization](https://apolloscape.auto/self_localization.html) dataset, as it provides essential camera extrinsics. You can aslo download pose information [here](https://drive.google.com/drive/folders/14mjZ9qh2JX5Nd-mXP3dpEzlLS9Qw2xIm?usp=sharing). You can find the dataset split in the 'apolloscape_split' folder. Please copy these split files into your dataset directory. 
 <br/>
 
 Puddle-1000 Dataset:
