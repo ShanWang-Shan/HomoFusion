@@ -42,7 +42,7 @@ Download the original datasets from [apolloscape segmentation](https://apollosca
 
 Puddle-1000 Dataset:
 <br>
-Download the datasets from [Puddle-1000](https://github.com/Cow911/SingleImageWaterHazardDetectionWithRAU.git), data split files can also be find in their repository under 'dataset' folder.
+Download the datasets from [Puddle-1000](https://anu365-my.sharepoint.com/my?id=%2Fpersonal%2Fu7094434%5Fanu%5Fedu%5Fau%2FDocuments%2Fwater%5Fhazard), data split files can also be find in their repository under 'dataset' folder.
 <br/>
 
 ## Checkpoints
